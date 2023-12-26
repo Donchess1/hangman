@@ -1,15 +1,13 @@
 #!/usr/bin/python3
-from category import pick_category
-from guess import my_guess
-from category import pool
+from category import *
 
 
 class exam:
-    def __init__(self, pool, word, frag):
+    def __init__(self):
         self.pool = pool
         self.word = word
         self.frag = frag
 
 
-word = [*pool]
-my_guess()
+chosen_word = pick_category(pool)
+swap_spaces(chosen_word)

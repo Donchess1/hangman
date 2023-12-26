@@ -21,3 +21,23 @@ def pick_category(pool):
             return chosen_word
         else:
             print("Enter a valid category key" )
+
+def swap_spaces(chosen_word):
+    trials = []
+    word_len = len(chosen_word)
+    dash = ['_'] * word_len
+    attempt = 3
+    while "_" in dash:
+        guess = input("what is on your mind: ")
+        if len(guess) == 1 and guess.isalpha():
+            if guess in trials:
+                print("character already tried, try another")
+            else:
+                trials.append(guess)
+                if guess in chosen_word:
+                    for index in range(word_len):
+                        if chosen_word[index] == guess:
+                            dash[index] = guess
+                    print(''.join(dash))
+                else:
+                    print("not in")
